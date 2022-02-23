@@ -1,0 +1,513 @@
+<DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Atlantic Canada Adventures</title>
+      <style>
+        body {
+          background: linear-gradient(to top, #fff1eb 0%, #bad5f2 100%);
+          margin: 0;
+          padding: 0;
+        }
+        ul {
+          list-style-type: none;
+          text-align: right;
+          border: 0;
+          padding: 0;
+          margin: 0;
+        }
+        li {
+          display: inline;
+          margin: 5px;
+          padding: 0, 0;
+          font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+            sans-serif;
+        }
+        hr {
+          border: none;
+          padding: 0;
+          border: 0;
+          height: 1px;
+          background-image: linear-gradient(
+            to right,
+            rgba(21, 74, 189, 0),
+            rgba(26, 138, 211, 0.75),
+            rgba(72, 177, 234, 0)
+          );
+        }
+        h1 {
+          text-align: center;
+          font-family: cursive;
+          padding: 0 0;
+          margin: 0 0;
+          border: 0 0;
+          font-size: 100px;
+        }
+        h2 {
+          text-align: center;
+          font-family: cursive;
+          padding: 0 0;
+          margin: 0 0;
+          border: 0 0;
+          font-size: 35px;
+        }
+
+        button {
+          display: block;
+          margin: 20px auto;
+          color: #fafafa;
+          font-size: 16px;
+          background: #ff7e67;
+          padding: 15px 20px;
+          border-color: #ff7e67;
+          border-radius: 50px;
+          border-style: solid;
+          box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+        }
+        a {
+          text-decoration: none;
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
+
+        .heading {
+          background-image: url("https://bpermin.files.wordpress.com/2022/02/whale.jpeg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          position: relative;
+          height: 750px;
+          background-position: center;
+          width: 100%;
+        }
+        .nav {
+          position: fixed;
+          right: 0;
+          padding: 10px;
+          background: rgba(186, 213, 242, 0.8);
+          width: 100%;
+        }
+
+        .headerLink {
+          color: #07689f;
+          opacity: 5;
+          line-height: 1;
+        }
+
+        .intro {
+          text-align: center;
+          font-family: "Courier New", Courier, monospace;
+          font-size: 17px;
+          padding: 0px;
+          width: 40%;
+          height: auto;
+          display: flex;
+          margin: 0 auto;
+          overflow: auto;
+        }
+
+        .blurb {
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          border: 1px solid #ff7e67;
+          border-radius: 10px;
+          margin: 0px 174px 0px 174px;
+          width: 90%;
+          height: auto;
+          padding: 10px;
+          display: flex;
+          margin: 0px auto;
+          overflow: auto;
+        }
+        .nbPicture {
+          width: 400px;
+          height: 400px;
+          background: url("https://bpermin.files.wordpress.com/2022/02/lighthouse.jpeg")
+            no-repeat;
+          background-size: 500px 500px;
+          float: left;
+          display: block;
+          border-radius: 500px;
+          padding: 32px 32px;
+          margin: 32px 32px;
+          transition: all 200ms ease-in-out;
+          object-fit: cover;
+        }
+
+        .nbPicture:hover {
+          background: url("https://bpermin.files.wordpress.com/2022/02/nbshecodes.jpg")
+            no-repeat;
+          background-size: 500px 500px;
+          width: 400px;
+          height: 400px;
+          border-radius: 500px;
+          padding: 32px 32px;
+          object-fit: cover;
+        }
+        .nfldPicture {
+          width: 400px;
+          height: 400px;
+          background: url("https://bpermin.files.wordpress.com/2022/02/bar.jpeg")
+            no-repeat;
+          background-size: 500px 500px;
+          float: left;
+          display: block;
+          border-radius: 500px;
+          padding: 32px 32px;
+          margin: 32px 32px;
+          transition: all 200ms ease-in-out;
+          object-fit: cover;
+        }
+
+        .nfldPicture:hover {
+          background: url("https://bpermin.files.wordpress.com/2022/02/screen-shot-2022-02-21-at-2.22.53-pm.png")
+            no-repeat;
+          background-size: 500px 500px;
+          width: 400px;
+          height: 400px;
+          border-radius: 500px;
+          padding: 32px 32px;
+          object-fit: cover;
+        }
+        .nsPicture {
+          width: 400px;
+          height: 400px;
+          background: url("https://bpermin.files.wordpress.com/2022/02/vineyard.jpeg")
+            no-repeat;
+          background-size: 500px 500px;
+          float: left;
+          display: block;
+          border-radius: 500px;
+          padding: 32px 32px;
+          margin: 32px 32px;
+          transition: all 200ms ease-in-out;
+          object-fit: cover;
+        }
+
+        .nsPicture:hover {
+          background: url("https://bpermin.files.wordpress.com/2022/02/nsshecodes.jpeg")
+            no-repeat;
+          background-size: 500px 500px;
+          width: 400px;
+          height: 400px;
+          border-radius: 500px;
+          padding: 32px 32px;
+          object-fit: cover;
+        }
+        .peiPicture {
+          width: 400px;
+          height: 400px;
+          background: url("https://bpermin.files.wordpress.com/2022/02/beach.jpeg")
+            no-repeat;
+          background-size: 500px 500px;
+          float: left;
+          display: block;
+          border-radius: 500px;
+          padding: 32px 32px;
+          margin: 32px 32px;
+          transition: all 200ms ease-in-out;
+          object-fit: cover;
+        }
+
+        .peiPicture:hover {
+          background: url("https://bpermin.files.wordpress.com/2022/02/peishecodes.jpg")
+            no-repeat;
+          background-size: 500px 500px;
+          width: 400px;
+          height: 400px;
+          border-radius: 500px;
+          padding: 32px 32px;
+          object-fit: cover;
+        }
+
+        .tourismLink {
+          text-align: center;
+          display: block;
+          font-size: 20px;
+          color: #07689f;
+          padding: 50px;
+          margin: 0 auto;
+        }
+
+        .text {
+          font-family: "Courier New", Courier, monospace;
+          padding: 15px 30px;
+          text-align: justify;
+        }
+
+        .headingProvince {
+          text-align: center;
+          font-size: 50px;
+        }
+        .figure {
+          display: block;
+        }
+
+        .caption {
+          display: block;
+          font-size: 14px;
+          font-family: cursive;
+          text-align: center;
+        }
+
+        .footer {
+          text-align: center;
+          font-family: monospace;
+          color: #07689f;
+          font-weight: bold;
+          font-size: 15px;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="heading">
+        <span class="nav">
+          <ul>
+            <li>
+              <a class="headerLink" href="#newBrunswickLink">New Brunswick</a>
+            </li>
+            <li>
+              <a class="headerLink" href="#nfldLink"
+                >Newfoundland and Labrador</a
+              >
+            </li>
+            <li><a class="headerLink" href="#nsLink">Nova Scotia </a></li>
+            <li>
+              <a class="headerLink" href="#peiLink">Prince Edward Island</a>
+            </li>
+            <li>
+              <a class="headerLink" href="#buttonLink">Find Your Adventure</a>
+            </li>
+          </ul>
+          <hr />
+        </span>
+        <br />
+        <br />
+
+        <h1>Atlantic Canada</h1>
+        <h2>Canada's Ocean Playground</h2>
+
+        <br />
+        <p class="intro">
+          The Atlantic Ocean’s waves carve the shores of this easternmost region
+          of Canada. Scroll down to discover which of these four provinces will
+          be the perfect spot for your next getaway.
+        </p>
+      </div>
+      <br />
+
+      <div class="blurb">
+        <a id="newBrunswickLink"></a>
+        <figure>
+          <div class="nbPicture"></div>
+          <figcaption class="caption">
+            <em>
+              "On the rock bound coast of New Brunswick the waves break
+              incessantly.”<br />
+              - Max Aitken, Lord Beaverbrook</em
+            >
+          </figcaption>
+        </figure>
+        <div class="blurb-text">
+          <h2 class="headingProvince">New Brunswick</h2>
+
+          <p class="text">
+            As Canada’s only officially bilingual province, New Brunswick is
+            home to an intriguing mix of cultures. Southern NB is home to
+            Loyalist culture (New England settlers who journeyed to Canada
+            during the American revolution to stay loyal to the Crown) while
+            northern NB is dotted with Acadian (descendants of 17th-century
+            French settlers) villages and Indigenous experiences. Just outside
+            Fredericton is Kings Landing. The living history museum is home to
+            more than a dozen 19th and early 20th century buildings where
+            costumed interpreters work in the sawmill, printing press and more.
+            Le Pays de la Sangouine in Bouctouche is an island-wide theatre
+            performance with Acadian characters and a restaurant that serves up
+            French-Canadian classics like pets de soeur. Further north, near
+            Miramichi, is the Metepenagiag Heritage Park, which showcases the
+            history of the Indigenous Mi’kmaq people. The museum showcases 3,000
+            years of history and overnight tipi campfire experiences.
+
+            <a
+              class="tourismLink"
+              ;
+              href="https://tourismnewbrunswick.ca/"
+              ;
+              target="blank"
+              ;
+              ><strong>Learn more</strong></a
+            >
+          </p>
+        </div>
+      </div>
+      <br />
+      <div class="blurb">
+        <a id="nfldLink"></a>
+        <figure>
+          <div class="nfldPicture"></div>
+
+          <figcaption class="caption">
+            <em>
+              "In a sense, I feel more an outsider in Los Angeles than I did in
+              Newfoundland." <br />- Rhys Ifans, actor/musician
+            </em>
+          </figcaption>
+        </figure>
+        <div class="blurb-text">
+          <h2 class="headingProvince">Newfoundland & Labrador</h2>
+          <p class="text">
+            Newfoundland and Labrador is known for its welcoming locals and
+            nowhere is this more evident than in its many bars and pubs. In
+            fact, the province boasts more bars per capita (3.87 bars per 10,000
+            population) than anywhere else in Canada. The place to find the
+            highest concentration of bars is on George Street in St. John’s,
+            with over two dozen drinking establishments. Stop in at the Celtic
+            Hearth, with displays of the building’s 150-year history, to try
+            local Quidi Vidi Beer (brewed with 20,000-year-old iceberg water)
+            and Jiggs dinner pie, a local specialty featuring salt beef and pork
+            riblets. Featuring live music every night of the week, the street
+            also hosts a summer music festival in August that attracts visitors
+            from around the world. Or, try a kitchen party at Sullivan's
+            Songhouse. This east coast tradition is an intimate gathering of
+            musicians who sing songs and tell tales.
+
+            <br />
+            <a
+              class="tourismLink"
+              href="https://www.newfoundlandlabrador.com/"
+              target="blank"
+              ><strong>Learn more</strong>
+            </a>
+          </p>
+        </div>
+      </div>
+      <br />
+      <div class="blurb">
+        <a id="nsLink"></a>
+        <figure>
+          <div class="nsPicture"></div>
+          <figcaption class="caption">
+            <em>
+              “You cannot separate the people from the land, it is who we are.”
+              <br />- Shalan Joudry, Mi'kmaw writer/ecologist
+            </em>
+          </figcaption>
+        </figure>
+        <div class="blurb-text">
+          <h2 class="headingProvince">Nova Scotia</h2>
+          <p class="text">
+            Nova Scotia’s position between the Bay of Fundy and the
+            Northumberland Strait has made it the ideal location for acres of
+            vineyards, growing everything from sparkling, white, red and fruit
+            wines. Avondale Sky Winery is located in a 180-year-old former
+            church about an hour outside capital Halifax. Pick up a bottle of
+            the province’s first appellation wine, Tidal Bay, a refreshing white
+            that pairs well with fresh seafood. On the western shores of the Bay
+            of Fundy, home to the world’s highest tides, visitors can dine on
+            the ocean floor at low tide. The three course-meal includes local
+            cheeses and charcuterie, lobster tail and a fresh local berry
+            dessert. For something a little more down-to-earth, grab an east
+            coast staple called donair from Pizza Corner, a Halifax intersection
+            known for its pizzerias. Donairs are made with spit-roasted shaved
+            beef, diced onions and tomatoes and a sweet garlic sauce all wrapped
+            up in a pita.
+            <br />
+
+            <a class="tourismLink" href="https://tourismns.ca/" target="blank"
+              ><strong>Learn more</strong>
+            </a>
+          </p>
+        </div>
+      </div>
+      <br />
+      <div class="blurb">
+        <a id="peiLink"></a>
+        <figure>
+          <div class="peiPicture"></div>
+
+          <figcaption class="caption">
+            <em>
+              “You never know what peace is until you walk along the winding red
+              roads of PEI.” - <br />
+              Lucy Maud Montgomery, author
+            </em>
+          </figcaption>
+        </figure>
+        <div class="blurb-text">
+          <h2 class="headingProvince">Prince Edward Island</h2>
+          <p class="text">
+            Canada’s smallest province, Prince Edward Island, is also Canada’s
+            #1 golf destination. Crowbrush, one of the island’s 16 courses, is
+            consistently ranked the best in Canada and has spectacular ocean
+            views and undulating fairways. If golf isn’t your thing, the island
+            recently opened Canada’s newest hiking trail, The Island Walk. The
+            700-kilometre trail circles the island, giving outdoor enthusiasts
+            views of PEI’s red sand beaches and farmlands as well as stops in
+            its charming cities like Victoria-by-the-Sea and Charlottetown.
+            Cyclers won’t want to miss the Confederation Trail, which runs 273
+            km tip-to-tip across PEI on a decommissioned railway line. The flat
+            trail makes it perfect for all fitness levels. After all that hard
+            work, relax on one of the island’s beaches. Basin Head, on the south
+            shore, is known as the “singing sands” for its white sands that
+            “sing” when stepped on.
+            <br />
+            <a
+              class="tourismLink"
+              href="https://www.tourismpei.com/"
+              target="blank"
+              ><strong>Learn more</strong></a
+            >
+          </p>
+        </div>
+      </div>
+      <br />
+      <button><a id="buttonLink">Find Your Adventure</a></button>
+      <br />
+      <p class="footer">
+        Coded by
+        <a class="headerLink" href="http://www.mandysavoie.com" target="blank"
+          >Mandy Savoie</a
+        >
+
+        <a href="https://www.instagram.com/mansavytravels/">
+          <img
+            alt="Instagram logo"
+            src="https://bpermin.files.wordpress.com/2022/02/glyph-logo_may2016.png"
+            width="15"
+            height="15"
+          />
+        </a>
+      </p>
+    </body>
+    <script>
+      function showAdventure() {
+        let adventure = prompt(
+          "What do you look for when you travel: food, culture, nature, nightlife?"
+        );
+
+        adventure = adventure.trim().toLowerCase();
+        if (adventure === "food") {
+          alert("🍕 Check out Nova Scotia! 🍕 ");
+          window.location.href = "#nsLink";
+        } else if (adventure === "culture") {
+          alert("🇨🇦 Check out New Brunswick! 🇨🇦");
+          window.location.href = "#newBrunswickLink";
+        } else if (adventure === "nature") {
+          alert("🌿 Check out Prince Edward Island! 🌿 ");
+          window.location.href = "#peiLink";
+        } else if (adventure === "nightlife") {
+          alert("🍺 Check out Newfoundland and Labrador! 🍺 ");
+          window.location.href = "#nfldLink";
+        } else {
+          alert(
+            "Looking for something else? No worries, every province has something great to offer!"
+          );
+        }
+      }
+      let button = document.querySelector("button");
+      button.addEventListener("click", showAdventure);
+    </script>
+  </html>
+</DOCTYPE>
